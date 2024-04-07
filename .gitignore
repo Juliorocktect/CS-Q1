@@ -1,2 +1,11 @@
 *.class
 main
+/build/
+.vscode/
+/CMakeFiles/
+*.cmake
+comp
+Makefile
+CMakeCache.txt
+*.a
+CMakeFiles
