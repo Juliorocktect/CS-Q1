@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 template <typename T>
 class Tree
 {
@@ -11,10 +11,16 @@ public:
         T content;
         Tree<T> *leftNode;
         Tree<T> *rightNode;
-        TreeNode() {}
+        TreeNode()
+        {
+            leftNode = nullptr;
+            rightNode = nullptr;
+        }
         TreeNode(T pContent)
         {
             content = pContent;
+            leftNode = nullptr;
+            rightNode = nullptr;
         }
     };
 
@@ -22,7 +28,10 @@ public:
     {
         root = nullptr;
     }
-    Tree(T pContent) { root = new TreeNode(pContent); }
+    Tree(T pContent)
+    {
+        root = new TreeNode(pContent);
+    }
     Tree<T> *getLeftTree() { return root->leftNode; }
     Tree<T> *getRightTree() { return root->rightNode; }
     void setLeftTree(Tree<T> *left) { root->leftNode = left; }
@@ -56,4 +65,32 @@ namespace trm
             anzahl++;
         return anzahl;
     }
+    template <typename T>
+    void printPreorder(Tree<T> *tree)
+    {
+        if (!tree)
+            return;
+        std::cout << tree->getContent() << "\t";
+        if (tree->getLeftTree())
+            printPreorder(tree->getLeftTree());
+        if (tree->getRightTree())
+            printPreorder(tree->getRightTree());
+    }
+    template <typename T>
+    void printInorder(Tree<T> *tree)
+    {
+        if (!tree)
+            return;
+        if (tree->getLeftTree())
+        {
+            std::cout << tree->getLeftTree()->getContent() << "\t";
+            printInorder(tree->getLeftTree());
+        }
+        std::cout << tree->getContent() << "\t";
+        if (tree->getRightTree())
+        {
+            std::cout << tree->getRightTree()->getContent() << "\t";
+        }
+    }
+
 };
