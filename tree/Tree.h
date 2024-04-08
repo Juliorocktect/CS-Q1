@@ -28,7 +28,32 @@ public:
     void setLeftTree(Tree<T> *left) { root->leftNode = left; }
     void setRightTree(Tree<T> *right) { root->rightNode = right; }
     T getContent() { return root->content; }
+    bool isEmpty() { return root == nullptr; }
 
 private:
     TreeNode *root;
+};
+
+namespace trm
+{
+    template <typename T>
+    int anzahlKnoten(Tree<T> *tree)
+    {
+        if (tree->getLeftTree() == nullptr && tree->getRightTree() == nullptr)
+            return 0;
+        int anzahl = 0;
+        if (tree->getLeftTree() != nullptr)
+        {
+            anzahl++;
+            anzahlKnoten<T>(tree->getLeftTree());
+        }
+        if (tree->getRightTree() != nullptr)
+        {
+            anzahl++;
+            anzahlKnoten<T>(tree->getRightTree());
+        }
+        if (!tree->isEmpty())
+            anzahl++;
+        return anzahl;
+    }
 };
