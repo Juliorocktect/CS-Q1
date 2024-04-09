@@ -83,14 +83,27 @@ namespace trm
             return;
         if (tree->getLeftTree())
         {
-            std::cout << tree->getLeftTree()->getContent() << "\t";
+            //std::cout << tree->getLeftTree()->getContent() << "\t";
             printInorder(tree->getLeftTree());
         }
         std::cout << tree->getContent() << "\t";
         if (tree->getRightTree())
         {
-            std::cout << tree->getRightTree()->getContent() << "\t";
+            //std::cout << tree->getRightTree()->getContent() << "\t";
+            printInorder(tree->getRightTree());
         }
+    }
+    template<typename T>
+    void printPostorder(Tree<T> *tree)
+    {
+        if(!tree)
+            return;
+        if(tree->getLeftTree())
+            printPostorder(tree->getLeftTree());
+        if(tree->getRightTree())
+            printPostorder(tree->getRightTree());
+        std::cout << tree-> getContent() << "\t";
+
     }
 
 };

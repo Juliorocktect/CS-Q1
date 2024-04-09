@@ -13,5 +13,7 @@ int main()
     trm::printPreorder(&tree);
     std::cout << std::endl;
     trm::printInorder(&tree);
+    std::cout << std::endl;
+    trm::printPostorder(&tree);
     return 0;
 }
