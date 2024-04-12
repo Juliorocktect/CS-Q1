@@ -36,7 +36,14 @@ public:
     Tree<T> *getRightTree() { return root->rightNode; }
     void setLeftTree(Tree<T> *left) { root->leftNode = left; }
     void setRightTree(Tree<T> *right) { root->rightNode = right; }
-    T getContent() { return root->content; }
+    void setContent(T pContent) { root->content = pContent; }
+    T getContent()
+    {
+        if (!root)
+        {
+            return root->content;
+        }
+    }
     bool isEmpty() { return root == nullptr; }
 
 private:
@@ -82,28 +89,21 @@ namespace trm
         if (!tree)
             return;
         if (tree->getLeftTree())
-        {
-            //std::cout << tree->getLeftTree()->getContent() << "\t";
             printInorder(tree->getLeftTree());
-        }
         std::cout << tree->getContent() << "\t";
         if (tree->getRightTree())
-        {
-            //std::cout << tree->getRightTree()->getContent() << "\t";
             printInorder(tree->getRightTree());
-        }
     }
-    template<typename T>
+    template <typename T>
     void printPostorder(Tree<T> *tree)
     {
-        if(!tree)
+        if (!tree)
             return;
-        if(tree->getLeftTree())
+        if (tree->getLeftTree())
             printPostorder(tree->getLeftTree());
-        if(tree->getRightTree())
+        if (tree->getRightTree())
             printPostorder(tree->getRightTree());
-        std::cout << tree-> getContent() << "\t";
-
+        std::cout << tree->getContent() << "\t";
     }
 
 };
