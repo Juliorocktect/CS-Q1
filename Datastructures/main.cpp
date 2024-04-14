@@ -10,6 +10,7 @@ int main()
     // tree.setLeftTree(new Tree<int>(2));
     // tree.setRightTree(new Tree<int>(4));
     Tree<Ahne> *ahnen = gibAhnenbaum();
-    ahnen->getContent().ausgeben();
+    Tree<Ahne> *ahnenBaum = new Tree<Ahne>(Ahne("Lisa","Simpson",'w'));
+    ane::ausgabe(ahnenBaum);
     return 0;
 }

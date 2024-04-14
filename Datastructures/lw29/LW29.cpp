@@ -24,7 +24,8 @@ void ane::ausgabe(Tree<Ahne> *tree)
 {
     if (!tree)
         return;
-    tree->getContent().ausgeben();
+    std::cout << 1;
+    std::cout << tree->getContent().vorname;
     if (tree->getLeftTree())
         ausgabe(tree->getLeftTree());
     if (tree->getRightTree())
