@@ -30,13 +30,55 @@ public:
     }
     Tree(T pContent)
     {
-        root = new TreeNode(pContent);
+        if (pContent) {
+            root = new TreeNode(pContent);
+        }
+        else
+            root = nullptr;
     }
-    Tree<T> *getLeftTree() { return root->leftNode; }
-    Tree<T> *getRightTree() { return root->rightNode; }
-    void setLeftTree(Tree<T> *left) { root->leftNode = left; }
-    void setRightTree(Tree<T> *right) { root->rightNode = right; }
-    void setContent(T pContent) { root->content = pContent; }
+    Tree(T pContent,Tree<T> pLeftTree,Tree<T> pRightTree) {
+        if(pContent) {
+            root = new TreeNode<T>(pContent);
+            if(pLeftTree) {
+                root->leftNode = pLeftTree;
+            }
+            if (pRightTree) {
+                root->rightNode = pRightTree;
+            }
+        }else {
+            root = nullptr;
+        }
+    }
+    Tree<T> *getLeftTree() {
+        if (root) {
+            return root->leftNode;
+        }
+    }
+    Tree<T> *getRightTree() {
+        if (root) {
+            return root->rightNode;
+        }
+    }
+    void setLeftTree(Tree<T> *left) {
+        if (root && left) {
+            root->leftNode = left;
+        }
+    }
+    void setRightTree(Tree<T> *right) {
+        if (root && right) {
+            root->rightNode = right;
+        }
+    }
+    void setContent(T pContent) {
+        if (pContent) {
+            if (!root) {
+                root = new TreeNode<T>(pContent);
+            }
+            else {
+                root->content = pContent;
+            }
+        }
+    }
     T getContent()
     {
         if (root)
