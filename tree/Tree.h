@@ -39,7 +39,7 @@ public:
     void setContent(T pContent) { root->content = pContent; }
     T getContent()
     {
-        if (!root)
+        if (root)
         {
             return root->content;
         }

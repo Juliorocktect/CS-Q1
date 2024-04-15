@@ -2,7 +2,7 @@
 
 Ahne::Ahne() {}
 
-Ahne::Ahne(char *pVorname, char *pNachname, char pGeschlecht)
+Ahne::Ahne(const char *pVorname,const char *pNachname, char pGeschlecht)
 {
     vorname = pVorname;
     nachname = pNachname;
@@ -24,8 +24,7 @@ void ane::ausgabe(Tree<Ahne> *tree)
 {
     if (!tree)
         return;
-    std::cout << 1;
-    std::cout << tree->getContent().vorname;
+    tree->getContent().ausgeben();
     if (tree->getLeftTree())
         ausgabe(tree->getLeftTree());
     if (tree->getRightTree())
