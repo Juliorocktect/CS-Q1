@@ -2,7 +2,7 @@
 
 Ahne::Ahne() {}
 
-Ahne::Ahne(const char *pVorname,const char *pNachname, char pGeschlecht)
+Ahne::Ahne(const char *pVorname, const char *pNachname, char pGeschlecht)
 {
     vorname = pVorname;
     nachname = pNachname;

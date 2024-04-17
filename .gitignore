@@ -10,3 +10,6 @@ CMakeCache.txt
 *.a
 CMakeFiles
 cmake-build-debug
+*.lst
+*.jar
+target/
