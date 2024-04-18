@@ -3,7 +3,7 @@ import com.inf.morse.include.BinaryTree;
 
 public interface Traversierung{
     //HA methoden
-    public void preOrder(BinaryTree<String> tree);
+    void preOrder(BinaryTree<String> tree);
     public void postOrder(BinaryTree<String> tree);
     public void inOrder(BinaryTree<String> tree);
 }

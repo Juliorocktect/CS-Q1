@@ -1,10 +1,9 @@
 package com.inf.morse;
-import java.sql.SQLOutput;
 import com.inf.morse.include.BinaryTree;
-import com.inf.morse.Traversierung;
+
 public class Morsecodebaum implements Traversierung{
     
-    public BinaryTree<String> morsecodebaum;
+    private BinaryTree<String> morsecodebaum;
 
     public Morsecodebaum(){
         BinaryTree<String>[] b = new BinaryTree[40];
@@ -74,6 +73,9 @@ public class Morsecodebaum implements Traversierung{
             morsezeichenDecodieren(b.getLeftTree(),code);
         }
     }
+    public String decodeToChar(String code){
+        return decode(morsecodebaum, code);
+    }
 
     //HA zum 17.04.:
     //Morsecode für einen Buchstaben decodieren und zurückgeben
@@ -97,7 +99,6 @@ public class Morsecodebaum implements Traversierung{
         String ergebnis = "";
         while (code.indexOf(" ") != -1){
             String codeStr = code.substring(0, code.indexOf(" "));
-            System.out.println(codeStr);
             ergebnis += decode(morsecodebaum,codeStr);
             code = code.substring(code.indexOf(" ")+1);
         }
@@ -112,21 +113,38 @@ public class Morsecodebaum implements Traversierung{
 
     //
     //
-    public void erzeugeMorsecode(char pZeichen, BinaryTree<String> pTree, String pCode){
+    public void erzeugeMorsecode(char pZeichen){
+        erzeugeMorsecode(pZeichen,morsecodebaum);
+    }
+    private void erzeugeMorsecode(char pZeichen, BinaryTree<String> pTree){
         //EIGENER CODE
     }
 
     public void preOrder(BinaryTree<String> tree)
     {
-        if(tree.isEmpty)
+        if(tree.isEmpty())
             return;
-        System.out.println(tree.getContent());
+        System.out.print(tree.getContent() + "\t");
         if (!tree.getLeftTree().isEmpty())
             preOrder(tree.getLeftTree());
         if(!tree.getRightTree().isEmpty())
             preOrder(tree.getRightTree());
     }
+    public void postOrder(BinaryTree<String>  tree){
 
+    }
+
+    @Override
+    public void inOrder(BinaryTree<String> tree) {
+
+    }
+
+    public void inOrderPrint(BinaryTree<String> tree) {
+
+    }
+    public void preOrderPrint(){
+        preOrder(morsecodebaum);
+    }
 }
 
 
