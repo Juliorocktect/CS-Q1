@@ -1,7 +1,7 @@
 package com.inf.morse;
 import com.inf.morse.include.BinaryTree;
 
-public class Morsecodebaum implements Traversierung{
+public class Morsecodebaum{
     
     private BinaryTree<String> morsecodebaum;
 
@@ -118,6 +118,7 @@ public class Morsecodebaum implements Traversierung{
     }
     private void erzeugeMorsecode(char pZeichen, BinaryTree<String> pTree){
         //EIGENER CODE
+        System.out.println();
     }
 
     public void preOrder(BinaryTree<String> tree)
@@ -134,7 +135,6 @@ public class Morsecodebaum implements Traversierung{
 
     }
 
-    @Override
     public void inOrder(BinaryTree<String> tree) {
 
     }
