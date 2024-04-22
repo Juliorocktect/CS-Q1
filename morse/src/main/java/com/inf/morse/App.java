@@ -10,7 +10,8 @@ public class App
     {
         Morsecodebaum baum = new Morsecodebaum();
         String str = baum.morseCodeDecodieren("..-. ");
-        System.out.println(str);
-        baum.preOrderPrint();
+        //System.out.println(str);
+        //baum.preOrderPrint();
+        System.out.println(baum.erzeugeMorsecode('H'));
     }
 }

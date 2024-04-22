@@ -1,4 +1,7 @@
-com/inf/morse/include/BinaryTree$BTNode.class
 com/inf/morse/include/BinaryTree.class
+com/inf/morse/include/Stack$StackNode.class
+com/inf/morse/Traversierung.class
+com/inf/morse/include/BinaryTree$BTNode.class
 com/inf/morse/Morsecodebaum.class
+com/inf/morse/include/Stack.class
 com/inf/morse/App.class

@@ -113,12 +113,21 @@ public class Morsecodebaum{
 
     //
     //
-    public void erzeugeMorsecode(char pZeichen){
-        erzeugeMorsecode(pZeichen,morsecodebaum);
+    public String erzeugeMorsecode(char pZeichen){
+        return erzeugeMorsecode(pZeichen,morsecodebaum,"");
     }
-    private void erzeugeMorsecode(char pZeichen, BinaryTree<String> pTree){
-        //EIGENER CODE
-        System.out.println();
+    private String erzeugeMorsecode(char pZeichen, BinaryTree<String> pTree,String weg){
+        if (!pTree.isEmpty())
+        {
+            if (pTree.getContent().charAt(0) == pZeichen){
+                return weg;
+            }
+            else{
+            erzeugeMorsecode(pZeichen,pTree.getLeftTree(), weg + ".");
+            erzeugeMorsecode(pZeichen,pTree.getRightTree(),weg + "-");
+            }
+        }
+        return weg;
     }
 
     public void preOrder(BinaryTree<String> tree)
