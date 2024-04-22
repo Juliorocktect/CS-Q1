@@ -10,3 +10,4 @@ Definition:
  Ein Binärbaum ist entweder leer oder er besteht aus einer Wurzel, sowie einem linken und rechtem Teilbaum. Bei diesen Teilbäumen handelt es sich wieder um Binärbäume.
 Begriff:
 
+![image](https://github.com/Juliorocktect/CS-Q1/assets/113830349/4398c7c9-8cfd-447f-8a04-957958c6854c)
