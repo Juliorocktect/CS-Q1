@@ -30,18 +30,14 @@ public:
     }
     Tree(T pContent)
     {
-        if (pContent)
-        {
+        
             root = new TreeNode(pContent);
-        }
-        else
-            root = nullptr;
     }
     Tree(T pContent, Tree<T> pLeftTree, Tree<T> pRightTree)
     {
         if (pContent)
         {
-            root = new TreeNode<T>(pContent);
+            root = new TreeNode(pContent);
             if (pLeftTree)
             {
                 root->leftNode = pLeftTree;
@@ -90,7 +86,7 @@ public:
         {
             if (!root)
             {
-                root = new TreeNode<T>(pContent);
+                root = new TreeNode(pContent);
             }
             else
             {

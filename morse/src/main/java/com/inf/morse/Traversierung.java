@@ -86,8 +86,6 @@ public class Traversierung
     
     public int bestimmeAnzahl(BinaryTree<Integer> b){
         int anz = 0;
-        //EIGENER CODE
-        
         return anz;
     }    
 
