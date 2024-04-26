@@ -9,7 +9,7 @@ public:
     const char *nachname;
     char geschlecht;
     Ahne();
-    Ahne(const char *pVorname,const char *pNachname, char pGeschlecht);
+    Ahne(const char *pVorname, const char *pNachname, char pGeschlecht);
     void ausgeben();
 };
 namespace ane
@@ -19,8 +19,9 @@ namespace ane
 
 Tree<Ahne> *gibAhnenbaum();
 
-struct Kind {
-    const char* vorname;
-    const char* nachname;
+struct Kind
+{
+    const char *vorname;
+    const char *nachname;
     char geschlecht;
 };

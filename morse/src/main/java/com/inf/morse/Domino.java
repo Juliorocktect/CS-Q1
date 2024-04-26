@@ -18,20 +18,34 @@ public class Domino {
         bt.setRightTree(bt7);
     }
 
-    public void ermittleAnzahlVerzweigungen(BinaryTree<Integer> tree, int anzahl){
+    public int ermittleAnzahlVerzweigungen(BinaryTree<Integer> tree){
         if (tree.isEmpty()){
-            return; 
+            return 0; 
         }
         if (!tree.getLeftTree().isEmpty() && !tree.getRightTree().isEmpty()){
-            anzahl = anzahl +2; 
+            return 2;
         }
-        ermittleAnzahlVerzweigungen(tree.getLeftTree(), anzahl);
-        ermittleAnzahlVerzweigungen(tree.getRightTree(), anzahl);
-        System.out.print(anzahl);
+        return ermittleAnzahlVerzweigungen(tree.getLeftTree()) + ermittleAnzahlVerzweigungen(tree.getRightTree());
     }
 
     public void aufrufen(){
         ermittleAnzahlVerzweigungen(bt, 0);
+    }
+
+    public void aufrufenZwei(){
+        anzahl(bt,0);
+    }
+    public void anzahl(BinaryTree<Integer> tree,int anzahl){
+        if(tree.isEmpty())
+            return;
+        if (!tree.getLeftTree().isEmpty() && !tree.getRightTree().isEmpty())
+        {
+            anzahl(tree.getLeftTree(),anzahl+2);
+            anzahl(tree.getRightTree(),anzahl+2);
+        }else {
+            anzahl(tree.getLeftTree(),anzahl);
+            anzahl(tree.getRightTree(),anzahl);
+        }
     }
 
     

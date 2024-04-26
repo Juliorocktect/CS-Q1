@@ -9,6 +9,6 @@ public class App
         //baum.preOrderPrint();
         System.out.println(baum.erzeugeMorsecode('H'));
         Domino domino = new Domino(); 
-        domino.aufrufen();
+        domino.aufrufenZwei();
     }
 }
