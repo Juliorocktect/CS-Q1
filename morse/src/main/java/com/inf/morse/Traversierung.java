@@ -16,6 +16,7 @@ public class Traversierung
         b5 = new BinaryTree<Integer>(11, b3, null);
         b6 = new BinaryTree<Integer>(9, b4, b5);
         b7 = new BinaryTree<Integer>(5, b1, b6);
+        
     }
     
     
@@ -41,7 +42,8 @@ public class Traversierung
         if(!pTree.getLeftTree().isEmpty())
             preordered(pTree.getLeftTree());
         if(!pTree.getRightTree().isEmpty())
-            preordered(pTree.getRightTree());           
+            preordered(pTree.getRightTree());
+        
     }
     
     public void inordered(BinaryTree pTree){
