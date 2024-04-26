@@ -1,3 +1,4 @@
+package com.inf.morse;
 import com.inf.morse.include.*;
 
 public class Benutzerprofil implements ComparableContent<Benutzerprofil>{

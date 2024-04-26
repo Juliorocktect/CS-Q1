@@ -1,4 +1,7 @@
 package com.inf.morse.include;
+
+import com.inf.morse.Benutzerprofil;
+
 /**
  * <p>
  * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2017.
@@ -90,7 +93,16 @@ public class BinarySearchTree<ContentType extends ComparableContent<ContentType>
 	 *            
 	 */
 	public void insert(ContentType pContent) {
-		//EIGENER CODE
+		if (isEmpty())
+		{
+			node = new BSTNode<ContentType>(pContent);
+		}
+		if (node.content.isGreater(pContent)){
+			node = node.left.node;
+		}
+		else{
+			node = node.right.node;
+		}
 	}
 
 	/**
@@ -205,7 +217,12 @@ public class BinarySearchTree<ContentType extends ComparableContent<ContentType>
 	 * 
 	 */
 	public ContentType search(ContentType pContent) {
-		//EIGENER CODE
+		if (!isEmpty()){
+			if (pContent.isGreater(pContent))
+			{
+				node = getNodeOfLeftSuccessor();
+			}
+		}
 	}
 
 	/* ----------- Weitere private Methoden -------------- */

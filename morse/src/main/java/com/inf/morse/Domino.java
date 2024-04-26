@@ -28,8 +28,8 @@ public class Domino {
         return ermittleAnzahlVerzweigungen(tree.getLeftTree()) + ermittleAnzahlVerzweigungen(tree.getRightTree());
     }
 
-    public void aufrufen(){
-        ermittleAnzahlVerzweigungen(bt, 0);
+    public int aufrufen(){
+        return ermittleAnzahlVerzweigungen(bt);
     }
 
     public void aufrufenZwei(){
