@@ -22,7 +22,7 @@ public class Benutzerprofil implements ComparableContent<Benutzerprofil>{
     }
     public boolean isEqual(Benutzerprofil pBenutzerprofil)
     {
-        return name.compareTo(pBenutzerprofil) == 0;
+        return name.compareTo(pBenutzerprofil.getName()) == 0;
     }
 
 
