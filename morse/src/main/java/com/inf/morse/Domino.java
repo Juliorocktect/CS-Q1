@@ -4,7 +4,7 @@ import com.inf.morse.include.BinaryTree;
 
 
 public class Domino {
-    private BinaryTree<Integer> bt;
+    private BinaryTree<Integer> bt = new BinaryTree<Integer>();
 
     public Domino()
     {
@@ -16,6 +16,22 @@ public class Domino {
         BinaryTree<Integer> bt6 = new BinaryTree<>(4,bt5,new BinaryTree<>(3));
         BinaryTree<Integer> bt7 = new BinaryTree<>(7,bt6,new BinaryTree<>(11));
         bt.setRightTree(bt7);
+    }
+
+    public void ermittleAnzahlVerzweigungen(BinaryTree<Integer> tree, int anzahl){
+        if (tree.isEmpty()){
+            return; 
+        }
+        if (!tree.getLeftTree().isEmpty() && !tree.getRightTree().isEmpty()){
+            anzahl = anzahl +2; 
+        }
+        ermittleAnzahlVerzweigungen(tree.getLeftTree(), anzahl);
+        ermittleAnzahlVerzweigungen(tree.getRightTree(), anzahl);
+        System.out.print(anzahl);
+    }
+
+    public void aufrufen(){
+        ermittleAnzahlVerzweigungen(bt, 0);
     }
 
     
