@@ -1,14 +1,20 @@
 package com.inf.morse;
 
+import com.inf.morse.include.BinaryTree;
+import com.inf.morse.dalton.domino.IOManager;
 public class App 
 {
     public static void main( String[] args )
     {
-        Morsecodebaum baum = new Morsecodebaum();
-        //System.out.println(str);
-        //baum.preOrderPrint();
-        System.out.println(baum.erzeugeMorsecode('H'));
-        Domino domino = new Domino(); 
-        domino.aufrufenZwei();
+        BinaryTree<Integer> b1 = new BinaryTree<>(2);
+        BinaryTree<Integer> b2 = new BinaryTree<>(6);
+        BinaryTree<Integer> b3 = new BinaryTree<>(2,b2,b1);
+        BinaryTree<Integer> b4 = new BinaryTree<>(5);
+        BinaryTree<Integer> b5 = new BinaryTree<>(3,b4,b3);
+        BinaryTree<Integer> b6 = new BinaryTree<>(15);
+        BinaryTree<Integer> b7 = new BinaryTree<>(4,b5,b6);
+        IOManager manager = new IOManager();
+        System.out.println(manager.erstelleSpeicherZeichenkette(b7));
+
     }
 }

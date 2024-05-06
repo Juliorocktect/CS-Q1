@@ -1,6 +1,14 @@
-com/inf/morse/include/BinaryTree$BTNode.class
+com/inf/morse/Domino.class
 com/inf/morse/include/BinaryTree.class
+com/inf/morse/Benutzerprofil.class
+com/inf/morse/Benutzerverwaltung.class
+com/inf/morse/Traversierung.class
+com/inf/morse/dalton/domino/IOManager.class
+com/inf/morse/include/ComparableContent.class
 com/inf/morse/include/Stack$StackNode.class
+com/inf/morse/include/BinarySearchTree.class
+com/inf/morse/include/BinaryTree$BTNode.class
+com/inf/morse/include/BinarySearchTree$BSTNode.class
+com/inf/morse/Morsecodebaum.class
 com/inf/morse/include/Stack.class
 com/inf/morse/App.class
-com/inf/morse/Traversierung.class
