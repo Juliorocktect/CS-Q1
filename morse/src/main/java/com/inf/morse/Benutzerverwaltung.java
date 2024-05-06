@@ -30,5 +30,16 @@ public class Benutzerverwaltung{
             return 0;
         }
     }
+    public int updatePasswort(Benutzerprofil pBenutzerprofil,int pAltePin,int pNeuePin)
+    {
+        if (suchen(pBenutzerprofil) == null)
+            return -1;
+        if (pruefen(pBenutzerprofil, pAltePin) == 1)
+        {
+            suchen(pBenutzerprofil).setPassword(pNeuePin);
+            return 1;
+        }
+        return 0;
+    }
     
 }

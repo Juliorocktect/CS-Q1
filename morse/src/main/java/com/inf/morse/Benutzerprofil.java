@@ -25,6 +25,11 @@ public class Benutzerprofil implements ComparableContent<Benutzerprofil>{
     {
         return name.compareTo(pBenutzerprofil.getName()) == 0;
     }
-
+    public void setPassword(int password) {
+        this.password = password;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
