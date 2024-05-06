@@ -24,14 +24,6 @@ public class Benutzerverwaltung{
         Benutzerprofil dummy = new Benutzerprofil(pName, -1);
         return userbaum.search(dummy);
     }
-    public int pruefen(Benutzerprofil pBenutzer,int pPasswort){
-        if (suchen(pBenutzer) == null)
-            return -1;
-        if (suchen(pBenutzer).getPassword() == pPasswort){
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+    
     
 }
