@@ -1,3 +1,5 @@
+
+
 package com.inf.morse.include;
 
 /**

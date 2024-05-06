@@ -12,23 +12,18 @@ public class Benutzerverwaltung{
     public Benutzerverwaltung(BinarySearchTree<Benutzerprofil> pUserbaum){
         userbaum =pUserbaum;
     }
-    public void einfuegen(Benutzerprofil pBenutzer){
-        userbaum.insert(pBenutzer);
+    public void einfuegen(String pName, int pPasswort){
+        Benutzerprofil neu = new Benutzerprofil(pName, pPasswort); 
+        userbaum.insert(neu);
     }
-    public void entfernen(Benutzerprofil pBenutzerprofil){
-        userbaum.remove(pBenutzerprofil);
+    public void entfernen(String pName, int pPasswort){
+        Benutzerprofil neu = new Benutzerprofil(pName, pPasswort);
+        userbaum.remove(neu);
     }
-    private Benutzerprofil suchen(Benutzerprofil pBenutzer){
-        return userbaum.search(pBenutzer);
+    private Benutzerprofil suchen(String pName){
+        Benutzerprofil dummy = new Benutzerprofil(pName, -1);
+        return userbaum.search(dummy);
     }
-    public int pruefen(Benutzerprofil pBenutzer,int pPasswort){
-        if (suchen(pBenutzer) == null)
-            return -1;
-        if (suchen(pBenutzer).getPassword() == pPasswort){
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+    
     
 }
