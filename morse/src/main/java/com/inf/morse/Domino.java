@@ -29,7 +29,7 @@ public class Domino {
     }
 
     public void aufrufen(){
-        ermittleAnzahlVerzweigungen(bt, 0);
+        ermittleAnzahlVerzweigungen(bt);
     }
 
     public void aufrufenZwei(){
