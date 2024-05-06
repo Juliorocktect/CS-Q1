@@ -27,28 +27,4 @@ public class Domino {
         }
         return ermittleAnzahlVerzweigungen(tree.getLeftTree()) + ermittleAnzahlVerzweigungen(tree.getRightTree());
     }
-
-    public int aufrufen(){
-        return ermittleAnzahlVerzweigungen(bt);
-    }
-
-    public void aufrufenZwei(){
-        anzahl(bt,0);
-    }
-    public void anzahl(BinaryTree<Integer> tree,int anzahl){
-        if(tree.isEmpty())
-            return;
-        if (!tree.getLeftTree().isEmpty() && !tree.getRightTree().isEmpty())
-        {
-            anzahl(tree.getLeftTree(),anzahl+2);
-            anzahl(tree.getRightTree(),anzahl+2);
-        }else {
-            anzahl(tree.getLeftTree(),anzahl);
-            anzahl(tree.getRightTree(),anzahl);
-        }
-    }
-
-    
-
-
 }
