@@ -1,0 +1,6 @@
+Graphen: 
+
+Ein Graph besteht aus einer Menge an Knoten und einer Menge an Kanten. 
+Ein Knoten hat einen eindeutigen Bezeichner. (Das Grad eines Knotens ist die Anzahl der Kanten, die von ihm ausgehen.)
+Eine Kante verbindet jeweils zwei Knoten. Kanten können mit einem Gewicht versehen sein. 
+Grundsätzlich unterscheidet man außerdem bei gerichteten Graphen zwischen Eingehenden und Ausgehenden Kanten. 
