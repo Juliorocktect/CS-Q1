@@ -76,7 +76,7 @@ public class Jarek implements Juli{
     printBinarySearchTree(pTree.getRightTree(), tiefe+1);
     }
     public int maximumKeinSuchbaum(){
-        return maximumKeinSuchbaum(keinSuchbaum,Integer.MIN_VALUE);
+        return wasTueIch(keinSuchbaum,Integer.MIN_VALUE);
     }    
     public void ausgeben(){
         System.out.println("Hallo");
