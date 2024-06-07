@@ -5,7 +5,7 @@ import com.inf.morse.include.*;
 public class Karte{
     Graph karte;
     
-    Karte(){
+    public Karte(){
         karte = new Graph();
         neuerOrt("augustin");
         neuerOrt("holzlar");
@@ -44,24 +44,25 @@ public class Karte{
     }
     public void findeWeg(String pZiel,String pStart){
         karte.setAllVertexMarks(false);
-        findeWeg(pZiel,karte.getVertex(pStart),pStart);
+        findeWeg(pZiel,pStart,pStart);
     }
-    private void findeWeg(String pZiel,Vertex current,String weg){
-        Vertex ende = karte.getVertex(pZiel);
-        if (ende != current){
-           current.setMark(true);
-           List<Vertex> nachbarn = karte.getNeighbours(current);
-           nachbarn.toFirst();
-        while(nachbarn.hasAccess()){
-            if (!nachbarn.getContent().isMarked()){            
-            findeWeg(pZiel,nachbarn.getContent(),weg + nachbarn.getContent().getID());
-            nachbarn.next();
-            }
-            }
-        }else{
-            System.out.println(current.getID());
+    private void findeWeg(String pNach,String akt,String bishWeg){
+        Vertex current = karte.getVertex(akt);
+        current.setMark(true);
+        Vertex target = karte.getVertex(pNach);
+    
+        if(current == target) {
+            System.out.println(bishWeg);
         }
-        
-        //vom start die nachbarn , für jeden nachbarn nochmal bis current == ziel
+        else {
+            List<Vertex> neighbors = karte.getNeighbours(current);
+            neighbors.toFirst();
+            while (neighbors.hasAccess()) {
+                if (!neighbors.getContent().isMarked()) {
+                    findeWeg(neighbors.getContent().getID(), pNach, bishWeg+" - "+ neighbors.getContent().getID());
+                }
+                neighbors.next();
+            }
+        }
     }
 }
